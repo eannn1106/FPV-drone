@@ -7,6 +7,7 @@ DATE CREATED: 25 july 2026
 
 # 17 August 2026: Sourcing parts & Adding custom parts
 > Sourcing parts
+
 Over the past few weeks, I had been searching for the most cheapest and compatible parts for my first ever FPV drone. 
 The reason it takes this long for me to do research and choosing the most suitable parts is because that FPV drones must equip a decent camera for cinematic medias. 
 All in all, I decided to make a custom flight controller pcb with esp32-s3 as this esp32 have tons of gpio pins to connect to the drone's peripherals and sensors. 
