@@ -26,3 +26,5 @@ All in all, I decided to make a custom flight controller pcb with esp32-s3 as th
 
 I also added 2D models from lcsc right after I secured what parts I'm going to use in this project for the drone.
 To achieve this, I used this https://github.com/uPesy/easyeda2kicad.py.git for exporting footprints, symbol and even 3D models of the parts. This way, I can save up tons of time cause I dont need to spend time on making custom symbols and footprints. 
+
+**Total time spent: 9 hours**
