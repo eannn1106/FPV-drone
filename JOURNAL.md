@@ -28,3 +28,18 @@ I also added 2D models from lcsc right after I secured what parts I'm going to u
 To achieve this, I used this https://github.com/uPesy/easyeda2kicad.py.git for exporting footprints, symbol and even 3D models of the parts. This way, I can save up tons of time cause I dont need to spend time on making custom symbols and footprints. 
 
 **Total time spent: 9 hours**
+
+
+# 19 August 2026: Schematics part 1
+
+Today I've been working on wiring up entire thing. For this schematics I rely heavily on the manufacturer's datasheet to wire everything up, in the midst of wiring up everything I've did some research for my case. Here's what I found out:
+- ESP32-s3 have 4 strapping pins (GPIO 0,3,45,46), and I am gonna avoid using these pins unless I really have to
+- There are two interrupt pins on the imu, and I only have to wire it one to my gpio pin
+- The gps module requires a RF amplifier as im using an external chip antenna 
+- The purpose of 1PPS pin on the gps module (for timing synchronization)
+- External coin cell for my gps module for backup voltage
+- So far I'm using XT60 connector for power transmission from the 4s Lipo battery, but this might change again eventually as I intend to connect the battery directly to the ESC, and the ESC will provide battery to the FC itself
+- Placement of components matters more than separating ground types
+- I might change the SDMMC mode of the MICRO SD card, probably from 4-bit down to 1-bit if more pins are required from the esp32-s3
+
+**Total time spent: 3 hours**
