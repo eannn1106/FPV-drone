@@ -42,4 +42,6 @@ Today I've been working on wiring up entire thing. For this schematics I rely he
 - Placement of components matters more than separating ground types
 - I might change the SDMMC mode of the MICRO SD card, probably from 4-bit down to 1-bit if more pins are required from the esp32-s3
 
+<img width="1058" height="723" alt="image" src="https://github.com/user-attachments/assets/c942bcbe-bff4-445e-b682-6b0e68ea9352" />
+
 **Total time spent: 3 hours**
