@@ -54,10 +54,24 @@ I've added a few things from previous session:
 - MX1.25 connectors for the camera pins
 - not planning to wiring up int2 pin on the IMU to save gpio space
 - OSD IC to burn telemetry data to the video data before transferring video data to the VTX module
+- Merging SPI connections for OSD IC and barometer (Im afraid of merging the IMU's SPI bus due to latency jittering)
+- I plan to wire the ELRS receiver through soldering wires, so I have to assign dedicated pads on the FC later on designing the PCB
+- Going to use a RX5808 for video receiver on the goggles
 
 On context, I will be removing the ESP32-s3 devkit from displaying onto the PCB, as I planned to connect the ESP32-S3 externally through the female pin connectors as shown below. 
 <img width="1015" height="678" alt="image" src="https://github.com/user-attachments/assets/217109b9-f8f5-4dc1-9285-22564a9f0706" />
 
 Everything looks kinda messy now. 
+
+<img width="750" height="1700" alt="image" src="https://github.com/user-attachments/assets/3bac61a4-b06b-4102-9326-2b9db9bdb766" />
+
+I thought that the camera's connector pin are using jst but until I reconfirmed with google, but in fact, founded out that instead of jst it's using molex picoblade connector.
+
+> Research
+
+I've did some research on these few topics on the way:
+- Isit safe to merge different sensors to the same SPI busses
+- Types of modes for MICRO SD card connection, in the end used 4-bit mode SDMMC and founded out this mode is the fastest and reliable then goes, 1-bit mode and SPI
+- Connections of VSYNC, HSYNC, and LOS pins of the OSD IC are mandatory or not in my case, also understood their functions of those pins
 
 **Total time spent: 8 hours**
