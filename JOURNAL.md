@@ -45,3 +45,19 @@ Today I've been working on wiring up entire thing. For this schematics I rely he
 <img width="1058" height="723" alt="image" src="https://github.com/user-attachments/assets/c942bcbe-bff4-445e-b682-6b0e68ea9352" />
 
 **Total time spent: 3 hours**
+
+# 20 August 2026: Schematics part 2
+
+Today I had finally finished the schematics part for the flight controller itself. I've did a lot of research on the way to here ending up finishing the whole wirings. 
+I've added a few things from previous session: 
+- Jst connectors to connect the VTX and ESC
+- MX1.25 connectors for the camera pins
+- not planning to wiring up int2 pin on the IMU to save gpio space
+- OSD IC to burn telemetry data to the video data before transferring video data to the VTX module
+
+On context, I will be removing the ESP32-s3 devkit from displaying onto the PCB, as I planned to connect the ESP32-S3 externally through the female pin connectors as shown below. 
+<img width="1015" height="678" alt="image" src="https://github.com/user-attachments/assets/217109b9-f8f5-4dc1-9285-22564a9f0706" />
+
+Everything looks kinda messy now. 
+
+**Total time spent: 8 hours**
