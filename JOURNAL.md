@@ -27,6 +27,16 @@ All in all, I decided to make a custom flight controller pcb with esp32-s3 as th
 I also added 2D models from lcsc right after I secured what parts I'm going to use in this project for the drone.
 To achieve this, I used this https://github.com/uPesy/easyeda2kicad.py.git for exporting footprints, symbol and even 3D models of the parts. This way, I can save up tons of time cause I dont need to spend time on making custom symbols and footprints. 
 
+> What did I do?
+
+At the start, I did some researching on how to build a fpv drone with custom flight controller, like the brand or specs of camera (analog or digital), ESC, motor, 
+and other sensors. I plan to use bare ICs for my custom flight controller instead of modules. I've spend quite some time figuring out how to add symbol and footprint from lcsc to kicad using the lcsc library so that I wont have to spend time making custom symbol and footprints. Later, I spent a lot of time finding my esp32s3 devkit which i will be using as the main microcontroller for this project, which at last I downloaded the symbol and footprint library from snapmagic. Later that I also try to figure out what are the types of gnd (mainly analog gnd and power gnd), which later I also found out that I dont have to be so particular on separating the gnds, instead the placement of my components matter more when it comes to separating gnds (this is a more traditional way to design pcbs).
+
+> Lapse 
+- [31 minutes](https://lapse.hackclub.com/timelapse/4Rj7IFrFs96F) 
+- [3 hours 14 minutes](https://lapse.hackclub.com/timelapse/sZxCJMg_yL6b)
+- (rest of the hours are recorded inside stardance)
+
 **Total time spent: 9 hours**
 
 
@@ -35,16 +45,23 @@ To achieve this, I used this https://github.com/uPesy/easyeda2kicad.py.git for e
 Today I've been working on wiring up entire thing. For this schematics I rely heavily on the manufacturer's datasheet to wire everything up, in the midst of wiring up everything I've did some research for my case. Here's what I found out:
 - ESP32-s3 have 4 strapping pins (GPIO 0,3,45,46), and I am gonna avoid using these pins unless I really have to
 - There are two interrupt pins on the imu, and I only have to wire it one to my gpio pin
+- For the imu, there are multiples protocol including I3C, I2C, spi and so on, im going to use spi for my custom flight controller as I think ill have enough pins available on the esp32s3 devkit
 - The gps module requires a RF amplifier as im using an external chip antenna 
 - The purpose of 1PPS pin on the gps module (for timing synchronization)
 - External coin cell for my gps module for backup voltage
 - So far I'm using XT60 connector for power transmission from the 4s Lipo battery, but this might change again eventually as I intend to connect the battery directly to the ESC, and the ESC will provide battery to the FC itself
 - Placement of components matters more than separating ground types
 - I might change the SDMMC mode of the MICRO SD card, probably from 4-bit down to 1-bit if more pins are required from the esp32-s3
+- I've also did some digging on firmware side to check the ESP-FC repo has any wiring constrictions for my components
+- Towards the half of this session I kinda got worried of firmware, so I went ahead to vs code and try to source of available firmware for me to use. But my rational quickly pulled me back to my priority which is schematics 
 
 <img width="1058" height="723" alt="image" src="https://github.com/user-attachments/assets/c942bcbe-bff4-445e-b682-6b0e68ea9352" />
 
-**Total time spent: 3 hours**
+> Lapse
+- [2 hours 42 minutes](https://lapse.hackclub.com/timelapse/RQaOAsdWm3QB)
+- [2 hours 11 minutes](https://lapse.hackclub.com/timelapse/Dun-Pq8h2ed-)
+
+**Total time spent: 4 hours**
 
 # 20 August 2026: Schematics part 2
 
@@ -57,6 +74,7 @@ I've added a few things from previous session:
 - Merging SPI connections for OSD IC and barometer (Im afraid of merging the IMU's SPI bus due to latency jittering)
 - I plan to wire the ELRS receiver through soldering wires, so I have to assign dedicated pads on the FC later on designing the PCB
 - Going to use a RX5808 for video receiver on the goggles
+- I also planned to add a buzzer so I can create those drone impression sound effects when I power up the drone, but I dont have any more available pin spaces on the esp32s3.
 
 On context, I will be removing the ESP32-s3 devkit from displaying onto the PCB, as I planned to connect the ESP32-S3 externally through the female pin connectors as shown below. 
 <img width="1015" height="678" alt="image" src="https://github.com/user-attachments/assets/217109b9-f8f5-4dc1-9285-22564a9f0706" />
@@ -70,8 +88,12 @@ I thought that the camera's connector pin are using jst but until I reconfirmed 
 > Research
 
 I've did some research on these few topics on the way:
-- Isit safe to merge different sensors to the same SPI busses
+- Isit safe to merge different sensors to the same SPI busses. Yes so i had a shared SPI bus for most of my components (I tried to keep this off from high speed sensors like barometer and IMU)
 - Types of modes for MICRO SD card connection, in the end used 4-bit mode SDMMC and founded out this mode is the fastest and reliable then goes, 1-bit mode and SPI
 - Connections of VSYNC, HSYNC, and LOS pins of the OSD IC are mandatory or not in my case, also understood their functions of those pins
 
-**Total time spent: 8 hours**
+> Lapse
+- [3 hours 33 minutes](https://lapse.hackclub.com/timelapse/XmuVitqd2Qe3)
+- [4 hours 17 minutes](https://lapse.hackclub.com/timelapse/QyjttQfzMO-R)
+
+**Total time spent: 7 hours 40 minutes**
