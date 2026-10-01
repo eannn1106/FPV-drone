@@ -61,7 +61,7 @@ Today I've been working on wiring up entire thing. For this schematics I rely he
 - [2 hours 42 minutes](https://lapse.hackclub.com/timelapse/RQaOAsdWm3QB)
 - [2 hours 11 minutes](https://lapse.hackclub.com/timelapse/Dun-Pq8h2ed-)
 
-**Total time spent: 4 hours**
+**Total time spent: 4 hours 53 minutes**
 
 # 20 August 2026: Schematics part 2
 
