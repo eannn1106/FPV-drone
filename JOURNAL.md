@@ -103,7 +103,7 @@ From previous journal, my schematics are kinda messy as most of the components' 
 <img width="1050" height="722" alt="Screenshot 2026-09-01 215916" src="https://github.com/user-attachments/assets/35694848-21bf-41f4-9480-582d86ee5ced" />
 Other than this, my OCD mind keeps on wanting things to be perfect for this custom flight controller, and eventually I decided to remove some stuff and add in some new functions and components to replace those freed up pins from my MCU. 
 
-**Here are the stuffs that are new over here**
+**Here are the stuffs that are new over here:**
 - I changed the variant of my MCU which is from a ESP32S3 devkitC to a ESP32S3 camera, the most distinctive difference over here is that the ESP32S3 camera have 20 pins while the ESP32S3 devkitC have 24 pins.
 - I've already removed blackbox logging using Micro SD card as I will be fully dependent on the flash memory of my ESP32S3 camera itself, although it's just 13-14MB size of flash memory for storing.
 - I've also added a SMD buzzer so I can recreate those commonly heard drone buzzer sound when the drone itself power up, with this function I could also used it as a rescue item, e.g. when the drone got disarmed during flight or any flight error will occur the the buzzer will make some tuned sound according to the situation.
