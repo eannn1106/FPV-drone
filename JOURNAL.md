@@ -97,3 +97,29 @@ I've did some research on these few topics on the way:
 - [4 hours 17 minutes](https://lapse.hackclub.com/timelapse/QyjttQfzMO-R)
 
 **Total time spent: 7 hours 40 minutes**
+
+# 2 October 2026: Cleaning up & adding new parts
+From previous journal, my schematics are kinda messy as most of the components' symbol are scattered around the canvas. So, I managed to clean it up with lines and labels. I've also connected all the pins of all components to the socket pin symbol, according to the ESP32s3 devkit pinout, and it looks something like this.
+<img width="1050" height="722" alt="Screenshot 2026-09-01 215916" src="https://github.com/user-attachments/assets/35694848-21bf-41f4-9480-582d86ee5ced" />
+Other than this, my OCD mind keeps on wanting things to be perfect for this custom flight controller, and eventually I decided to remove some stuff and add in some new functions and components to replace those freed up pins from my MCU. 
+
+**Here are the stuffs that are new over here**
+- I changed the variant of my MCU which is from a ESP32S3 devkitC to a ESP32S3 camera, the most distinctive difference over here is that the ESP32S3 camera have 20 pins while the ESP32S3 devkitC have 24 pins.
+- I've already removed blackbox logging using Micro SD card as I will be fully dependent on the flash memory of my ESP32S3 camera itself, although it's just 13-14MB size of flash memory for storing.
+- I've also added a SMD buzzer so I can recreate those commonly heard drone buzzer sound when the drone itself power up, with this function I could also used it as a rescue item, e.g. when the drone got disarmed during flight or any flight error will occur the the buzzer will make some tuned sound according to the situation.
+- I've also replaced the ELRS receiver with a LORA module and a RF processor (namely a MCU, ESP8266, so it can communicate with the LORA module itself). Now, things will be more technical than ever as Im now messing with RFs. And doing so, I could also save up some cost inside the BOM.
+- I've also removed a LDO regulator (5V to 3.3V) cuz im going to use the on-board LDO in the MCU, whereby im going to input 5V into the MCU and 3.3V will be output to all components that are using 3.3V
+
+<img width="1350" height="808" alt="Screenshot 2026-09-30 144647" src="https://github.com/user-attachments/assets/eeb77602-99ed-4630-a4ab-bcd27db38317" />
+
+This will be the final schematics, and next session I will soon proceed with managing footprints first then going into layout-ing. 
+
+> Lapse
+- [2 hours 27 minutes](https://lapse.hackclub.com/timelapse/gGVmfJon4BNI)
+- [35 minutes](https://lapse.hackclub.com/timelapse/uKweIGeeuaxO)
+- [1 hour 7 minutes](https://lapse.hackclub.com/timelapse/-a5yFwwTULqH)
+- [2 hours 35 minutes](https://lapse.hackclub.com/timelapse/MgX_zaedv4po)
+- [10 minutes](https://lapse.hackclub.com/timelapse/aBydVnGwjJaT)
+- [11 minutes](https://lapse.hackclub.com/timelapse/LZ87xXXs8FVr)
+
+**Total time spent: 7 hours 5 minutes**
