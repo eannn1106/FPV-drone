@@ -123,3 +123,13 @@ This will be the final schematics, and next session I will soon proceed with man
 - [11 minutes](https://lapse.hackclub.com/timelapse/LZ87xXXs8FVr)
 
 **Total time spent: 7 hours 5 minutes**
+
+# 3 October 2026: Assigning footprints
+Today I have finished assigning all the footprints to the respective components. Most of my components like SMD chip inductor, resistor and capacitor will mainly be in 0603 packaging as I feel like it is the right size for my situation as I really need to place everything in a tight space with the smaller components I could possibly use and will be manageable when soldering even though it would be my first ever time soldering such small components. (ofc im going to use a hotgun or a heatplate for this). While rest of the "important" components like the sensors, ICs, crystals, jst connectors and others that are imported using the easyeda library already heave pre-assigned footprint. This actually saves me quite a lot of time. In the middle of the lapse session, I've also searched up whether my selected 22uH inductor from Coilank is suitable for my buck converter (TPS5430DDAR). Although, most of the capacitors, inductors and resistor are in 0603 packaging, there's some special component like 220uF and 47uF im unable to select 0603 as 220uF is a polarized bulk capacitor, so i have to use those aluminum ones, and for 47uF capacitor, im unable to find suitable 0603 packaging capacitor cuz its too expensive and out of stocked. During assigning the footprints to the respective components, I've also searched up each components that im going to purchase from lcsc, so I wont get wrong with the packaging. In contrast, if i first assigning them the packaging footprint I wanted, that might be some uncertainty mistakes im going to make as that package component might run out of stock or to expensive. 
+
+<img width="1172" height="782" alt="Screenshot 2026-10-03 234548" src="https://github.com/user-attachments/assets/098e7562-9c4e-4e20-b07f-4f0f46baa9c4" />
+
+> Lapse
+- [2 hours 12 minutes](https://lapse.hackclub.com/timelapse/Lqp6Ees-28a3)
+
+**Total time spent: 2 hours 12 minutes**
